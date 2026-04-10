@@ -100,8 +100,13 @@ object GithubApi {
 
     suspend fun getLatestReleaseBuild(): Release = getLatestRelease()
 
-    suspend fun getLatestBuild(): Release =
-        if (isAlpha) getLatestPreReleaseBuild() else getLatestReleaseBuild()
+    suspend fun getLatestBuild(): Release {
+        val latestRelease = getLatestReleaseBuild()
+        if (!isAlpha) return latestRelease
+
+        val latestPreRelease = runCatching { getLatestPreReleaseBuild() }.getOrNull()
+        return latestPreRelease?.takeIf { it.publishedAt >= latestRelease.publishedAt } ?: latestRelease
+    }
 
     private fun checkErrorMessage(data: String) {
         val responseElement = json.parseToJsonElement(data)

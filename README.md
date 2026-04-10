@@ -7,16 +7,11 @@
 ~~Bug Video~~
 
 [![GitHub Release Release](https://img.shields.io/endpoint?url=https%3A%2F%2Fbadge.versions.bv.aaa1115910.dev%2Fgithub%3Fprerelease%3Dfalse)](https://github.com/aaa1115910/bv/releases?q=prerelease%3Afalse)
-[![GitHub Release Pre-Release](https://img.shields.io/endpoint?url=https%3A%2F%2Fbadge.versions.bv.aaa1115910.dev%2Fgithub%3Fprerelease%3Dtrue)](https://github.com/aaa1115910/bv/releases?q=prerelease%3Atrue)
 
 [![Workflow Release](https://github.com/aaa1115910/bv/actions/workflows/release.yml/badge.svg)](https://github.com/aaa1115910/bv/actions/workflows/release.yml)
-[![Workflow Alpha](https://github.com/aaa1115910/bv/actions/workflows/alpha.yml/badge.svg)](https://github.com/aaa1115910/bv/actions/workflows/alpha.yml)
+[![Workflow Push Release](https://github.com/aaa1115910/bv/actions/workflows/push_release.yml/badge.svg)](https://github.com/aaa1115910/bv/actions/workflows/push_release.yml)
 [![Android Sdk Require](https://img.shields.io/badge/Android-6.0%2B-informational?logo=android)](https://developer.android.com/jetpack/androidx/versions#version-table)
 [![GitHub](https://img.shields.io/github/license/aaa1115910/bv)](https://github.com/aaa1115910/bv)
-
-**BV 无法在中国大陆地区内的智能电视上使用，如有相关使用需求请使用 [云视听小电视](https://app.bilibili.com)**
-
-**禁止在中国境内传播、宣传、分发 BV**
 
 </div>
 
@@ -39,10 +34,6 @@ BV ~~(Bug Video)~~ 是一款 [哔哩哔哩](https://www.bilibili.com) 的第三�
 ### Release
 
 - [Github Release](https://github.com/aaa1115910/bv/releases?q=prerelease%3Afalse)
-
-### Alpha
-
-- [Github Release](https://github.com/aaa1115910/bv/releases?q=prerelease%3Atrue)
 
 ## License
 
