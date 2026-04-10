@@ -31,7 +31,10 @@ jobs:
       - name: Write google-services.json
         env:
           DATA: ${{ secrets.GOOGLE_SERVICES_JSON }}
-        run: echo $DATA > app/google-services.json
+        run: |
+          if [ -n "$DATA" ]; then
+            echo "$DATA" > app/google-services.json
+          fi
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -40,13 +43,19 @@ jobs:
         env:
           SIGNING_PROPERTIES: ${{ secrets.SIGNING_PROPERTIES }}
         run: |
-          echo ${{ secrets.SIGNING_PROPERTIES }} > encoded_signing_properties
-          base64 -Dd -i encoded_signing_properties > signing.properties
+          if [ -n "$SIGNING_PROPERTIES" ]; then
+            echo "$SIGNING_PROPERTIES" > encoded_signing_properties
+            base64 -Dd -i encoded_signing_properties > signing.properties
+          fi
 
       - name: Add jks file
+        env:
+          SIGN_KEY: ${{ secrets.SIGN_KEY }}
         run: |
-          echo ${{ secrets.SIGN_KEY }} > ./encoded_key
-          base64 -Dd -i encoded_key > key.jks
+          if [ -n "$SIGN_KEY" ]; then
+            echo "$SIGN_KEY" > ./encoded_key
+            base64 -Dd -i encoded_key > key.jks
+          fi
 
       - name: Build apk
         run: ./gradlew assembleDefaultRelease assembleDefaultDebug
